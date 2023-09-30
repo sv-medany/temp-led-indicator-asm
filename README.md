@@ -1,42 +1,40 @@
-# Keypad to Frequency Converter
 
-This project is a keypad to frequency converter implemented using the 8051 microcontroller. It allows the user to input a number using a keypad, and then converts that number into a corresponding frequency output. The generated frequency is used to toggle an output pin on the microcontroller.
+# Temperature LED Indicator (Assembly)
+
+This repository contains an assembly code implementation for a temperature LED indicator. The code allows users to input the current temperature and indicates the temperature range using different colored LEDs.
 
 ## Code Overview
 
-The code provided is written in C and is targeted for the 8051 microcontroller. It includes the following main components:
+The provided assembly code in `mp_proj.asm` performs the following tasks:
 
-- Keypad Scanning: The code scans a 4x3 keypad to detect key presses and retrieves the corresponding key value.
-- Frequency Calculation: Upon receiving a key press, the code performs calculations to determine the corresponding frequency output. It uses a series of if-else statements to handle different key values and apply specific frequency conversion formulas.
-- Timer Setup: The code initializes Timer 1 to generate the desired frequency output. It sets the appropriate register values for the timer based on the calculated frequency.
-- Interrupt Handling: The code includes an interrupt service routine to toggle the output pin at the specified frequency. It uses Timer 1 interrupts to control the output toggling.
-- Seven-Segment Display: The code implements a simple function to display the current input number on a four-digit seven-segment display.
-
-## Prerequisites
-
-To run this code, you need the following:
-
-- An 8051 microcontroller board with a keypad and a seven-segment display connected.
-- A compatible development environment, such as Keil uVision, to compile and upload the code to the microcontroller.
-- Required components and connections as per the circuit diagram.
+- Reads the current temperature input from the user.
+- Compares the temperature value to predefined thresholds to determine the LED indicator color.
+- Displays a corresponding message indicating the LED color (Red, Yellow, or Green) based on the temperature range.
 
 ## Usage
 
-1. Set up the 8051 microcontroller board with the keypad and seven-segment display connected.
+To use this code:
 
-2. Open the provided code in your preferred development environment.
+1. Assemble the `mp_proj.asm` code using an appropriate assembly compiler or assembler compatible with the target platform or microcontroller.
+2. Load and run the resulting executable on a compatible platform or microcontroller that supports assembly language.
+3. Follow the instructions prompted to enter the current temperature.
+4. Observe the LED indicator color displayed based on the temperature range.
 
-3. Build and upload the code to the microcontroller.
+## Prerequisites
 
-4. Power on the microcontroller and observe the seven-segment display.
+To run this code, you need:
 
-5. Press the keys on the keypad to input numbers. The corresponding frequency will be displayed on the seven-segment display.
+- An assembly compiler or assembler compatible with the target platform or microcontroller.
+- A platform or microcontroller capable of executing assembly code.
 
-6. Connect an output device, such as an LED, to the specified output pin. The LED will toggle at the generated frequency.
+## Repository Structure
 
-## Circuit Diagram
+The repository has the following structure:
 
-Insert a circuit diagram here to illustrate the connections between the microcontroller, keypad, seven-segment display, and output device.
+```
+- mp_proj.asm : The main assembly code file.
+- README.md : This file, providing an overview of the repository.
+```
 
 ## Contributing
 
@@ -46,3 +44,4 @@ Contributions to this project are welcome! If you have any ideas or improvements
 
 This project is licensed under the [MIT License](LICENSE).
 
+```
